@@ -1,17 +1,3 @@
-import jwt from "jsonwebtoken";
-
-export const SignJwt = (userInfo) => {
-    const payload = {
-        id: userInfo.id,
-        email: userInfo.email
-    }
-    const secretKey = process.env.JWT_SECRET
-    const options = {
-        expiresIn: '1d'
-    }
-    return jwt.sign(payload, secretKey, options);
-}
-
 /**
  * Validates the input object against a given schema.
  *
