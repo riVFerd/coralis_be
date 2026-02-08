@@ -78,6 +78,7 @@ export const login = async (req, res) => {
                 token: token,
                 user: {
                     id: user.id,
+                    name: user.name,
                     email: user.email,
                 }
             },
@@ -119,7 +120,7 @@ export const forgotPassword = async (req, res) => {
         return res.status(200).json({
             success: true,
             message: 'Password reset token created',
-            resetToken: resetToken, // In real case, send this via email
+            reset_token: resetToken, // In real case, send this via email
         });
     } catch (error) {
         console.log(error);
